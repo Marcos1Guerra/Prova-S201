@@ -1,0 +1,37 @@
+class AnimalCorrida{
+  constructor(velocidade, nome, cor){
+    this.valocidade = velocidade;
+    this.nome = nome;
+    this.cor = cor;
+  }
+}
+
+
+class Cavalo extends AnimalCorrida{
+  constructor(velocidade, nome, cor, posicao){
+    super(velocidade, nome, cor);
+    this.posicao = 0;
+  }
+
+  mover(){
+    if(this.posicao <= 200){
+      this.posicao = (this.posicao + this.velocidade*4);
+    }
+    else{
+      console.log(`O cavalo ${this.nome} terminou a corrida!`);
+    }
+  }
+}
+
+let cavalo1 = new Cavalo(10, "Pé de pano", "branco");
+let cavalo2 = new Cavalo(11, "Bombom", "marrom");
+let cavalo3 = new Cavalo(12, "Mansinho", "preto");
+
+cavalo1.mover();
+cavalo2.mover();
+cavalo3.mover();
+cavalo1.mover();
+cavalo2.mover();
+cavalo3.mover();
+
+
